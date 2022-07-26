@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>LurkForWork</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- You can add your styles and scripts here -->
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/global.css" />
+</head>
+<body>
+    <!-- This is an example app structure, you can modify this as much as you choose --> 
+    <header>
+        <h1 id="logo">lurkforwork.com</h1>
+        <div class="open-menu"><img src="./img/hamburger.svg"></i></div>
+        <nav>
+            <ul class="nav-links">
+                <li class="nav-item"><a href="#" id="feed-btn">Feed</a></li>
+                <li class="nav-item"><a href="#" id="add-job-btn">Add Job</a></li>
+                <li class="nav-item"><a href="#" id="add-someone-btn">Add Someone</a></li>
+                <div class="close-menu"><img src="./img/close.svg"></i></div>
+            </ul>
+        </nav>
+        <a class="cta" href="#" id="own-profile"><button>Profile</button></a>
+    </header>
+    
+    <main role="main">
+        <!-- app goes here --> 
+
+        <div class="alert" id="password-failed-popup">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg">Password does not match</span>
+            <span class="close-div fa-times" id="close-btn1">
+                <span class="close-btn"><b>x</b></span>
+            </span>
+        </div>
+
+        <div class="alert" id="login-failed-popup">
+            <span class="fas fa-exclamation-circle"></span>
+            <span class="msg">Email or Password Incorrect</span>
+            <span class="close-div fa-times" id="close-btn2">
+                <span class="close-btn"><b>x</b></span>
+            </span>
+        </div>
+
+        <div class="center" id="center">
+            <div class="login-screen" id="login-screen">
+                <h1>Login</h1>
+                <form method="post">
+                    <div class="txt-field">
+                        <input type="text" id="login-email" required>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" id="login-password" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <!-- <input type="submit" value="Login" style="display: none"> -->
+                    <input type="button" value="Login" id="btn-login">
+                    <div class="signup-link">
+                        Not a member? <a href="#" id="btn-signup-form">Signup</a>
+                    </div>
+                </form>
+            </div>
+            <div class="register-screen" style="display: none" id="register-screen">
+                <h1>New Account</h1>
+                <form method="post">
+                    <div class="txt-field">
+                        <input type="text" id="register-email" required>
+                        <span></span>
+                        <label>Email</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" id="register-password" required>
+                        <span></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="password" id="register-confirm-password" required>
+                        <span></span>
+                        <label>Confirm Password</label>
+                    </div>
+                    <div class="txt-field">
+                        <input type="text" id="register-name" required>
+                        <span></span>
+                        <label>Name</label>
+                    </div>
+                    <!-- <input type="submit" value="Sign up"> -->
+                    <input type="button" value="Sign up" id="btn-register">
+                    <div class="signup-link">
+                        Have an account? <a href="#" id="btn-login-form">Login</a>
+                    </div>
+                </form>
+            </div>
+
+            <!-- <div class="job-feed-screen" style="display: none" id="job-feed-screen">
+
+            </div> -->
+            
+        </div>
+
+        <div class="show-profile" style="display: none" id="show-profile">
+            <div class="profile-head-container">
+                <div class="pic-name-container">
+                    <img src="./img/profile1.svg" alt="profile pic placeholder" class="profile-img" id="profile-img">
+                    <h1 id="show-profile-name">Placeholder</h1>
+                </div>
+                <button id="edit-profile-btn" style="display: none">Edit Profile</button>
+            </div>
+            <p class="personal-id" id="personal-id">ID: 00000</p>
+            <p class="personal-email" id="personal-email">Email: abc@abc.com</p>
+            <div class="profile-interaction-container">
+                <a id="profile-followers">Followers: Placeholder</a>
+                <button id="profile-follow-button">Status</button>
+            </div>
+            
+        </div>
+
+
+        <div class="job-feed-screen" style="display: none" id="job-feed-screen"></div>
+
+        <div class="popup-overlay" style="display: none" id="popup-overlay">
+            <div class="popup-box-container">
+                <div class="popup-message-container">
+                    <h1 id="popup-title">Template</h1>
+                    <div class="popup-message-content" id="popup-message-content">
+
+                    </div>
+                </div>
+                <button class="done-btn" id="done-btn">
+                    <span>Done</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="popup-overlay" style="display: none" id="edit-overlay">
+            <div class="popup-box-container">
+                <div class="popup-message-container">
+                    <h1 id="edit-title">Placeholder</h1>
+                    <div class="popup-message-content" id="popup-edit-content">
+                    </div>
+                </div>
+                <button class="submit-edit-btn" id="submit-edit-btn">
+                    <span>Submit</span>
+                </button>
+                <button class="cancel-edit-btn" id="cancel-edit-btn">
+                    <span>Cancel</span>
+                </button>
+            </div>
+        </div>
+
+        <div class="pagination-btn-container" style="display: none" id="pagination-btn-container">
+            <a class="arrow left" id="arrow-left"></a>
+            <b id="current-page-number">1</b>
+            <a class="arrow right" id="arrow-right"></a>
+        </div>
+
+    </main>
+
+
+    <footer>
+        <p>&copy; lurkforwork.com 2022</p>
+    </footer>
+    <script type="module" src="src/main.js"></script>
+</body>
+</html>
